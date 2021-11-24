@@ -1,3 +1,4 @@
+import 'package:blood_donation/DBTabs/delete_donor_entry.dart';
 import 'package:blood_donation/DBTabs/drequests.dart';
 import 'package:blood_donation/screens/login_screen.dart';
 import 'package:flutter/material.dart';
@@ -9,6 +10,8 @@ import 'DBTabs/infoentry.dart';
 import 'DBTabs/donorinfoentry.dart';
 import 'DBTabs/drequests.dart';
 import 'DBTabs/receivertab.dart';
+import 'DBTabs/faqs.dart';
+import 'DBTabs/deleteentry.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -21,7 +24,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: WelcomeScreen.id,
+      initialRoute: CloudFirestoreSearch.id,
       routes: {
         LoginScreen.id: (context) => const LoginScreen(),
         RegisterScreen.id: (context) => const RegisterScreen(),
@@ -31,6 +34,9 @@ class MyApp extends StatelessWidget {
         DinfoEntry.id: (context) => const DinfoEntry(),
         Drequests.id: (context) => Drequests(),
         Rrequests.id: (context) => Rrequests(),
+        DeleteEntru.id: (context) => const DeleteEntru(),
+        CloudFirestoreSearch.id: (context) => CloudFirestoreSearch(),
+        deletedonor.id: (context) => const deletedonor(),
       },
     );
   }

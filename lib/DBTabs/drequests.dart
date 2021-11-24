@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/services.dart';
 
 final _firestore = FirebaseFirestore.instance;
 late User loggedInUser;
@@ -76,6 +77,9 @@ class RequestStream extends StatelessWidget {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: <Widget>[
+                      const SizedBox(
+                        height: 5.0,
+                      ),
                       Container(
                         child: Row(
                           children: <Widget>[
@@ -156,6 +160,29 @@ class RequestStream extends StatelessWidget {
                               document['contact'],
                               style: const TextStyle(
                                 fontSize: 17.0,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Container(
+                        child: Row(
+                          children: <Widget>[
+                            const Text(
+                              'Copy your Unique ID',
+                              style: TextStyle(
+                                fontSize: 15.0,
+                              ),
+                            ),
+                            IconButton(
+                              onPressed: () {
+                                Clipboard.setData(
+                                  ClipboardData(text: document.id),
+                                );
+                              },
+                              icon: const Icon(
+                                Icons.copy,
+                                size: 20.0,
                               ),
                             ),
                           ],
