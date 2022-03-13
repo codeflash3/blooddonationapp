@@ -1,5 +1,6 @@
 import 'package:blood_donation/DBTabs/delete_donor_entry.dart';
 import 'package:blood_donation/DBTabs/drequests.dart';
+import 'package:blood_donation/DBTabs/searchblood.dart';
 import 'package:blood_donation/screens/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:blood_donation/screens/register_screen.dart';
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: CloudFirestoreSearch.id,
+      initialRoute: WelcomeScreen.id,
       routes: {
         LoginScreen.id: (context) => const LoginScreen(),
         RegisterScreen.id: (context) => const RegisterScreen(),
@@ -36,7 +37,8 @@ class MyApp extends StatelessWidget {
         Rrequests.id: (context) => Rrequests(),
         DeleteEntru.id: (context) => const DeleteEntru(),
         CloudFirestoreSearch.id: (context) => CloudFirestoreSearch(),
-        deletedonor.id: (context) => const deletedonor(),
+        Deletedonor.id: (context) => const Deletedonor(),
+        Searchblood.id: (context) => Searchblood(),
       },
     );
   }

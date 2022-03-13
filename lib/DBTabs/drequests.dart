@@ -16,24 +16,6 @@ class _DrequestsState extends State<Drequests> {
   // final _auth = FirebaseAuth.instance;
 
   @override
-  // void initState() {
-  //   super.initState();
-  //
-  //   getCurrentUser();
-  // }
-
-  // void getCurrentUser() async {
-  //   try {
-  //     final user = _auth.currentUser;
-  //     if (user != null) {
-  //       loggedInUser = user;
-  //     }
-  //   } catch (e) {
-  //     print(e);
-  //   }
-  // }
-
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -71,7 +53,7 @@ class RequestStream extends StatelessWidget {
                 child: Container(
                   padding: const EdgeInsets.all(6.0),
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(2.0),
+                    borderRadius: BorderRadius.circular(10.0),
                     border: Border.all(color: Colors.redAccent, width: 2),
                   ),
                   child: Column(
@@ -199,3 +181,5 @@ class RequestStream extends StatelessWidget {
     );
   }
 }
+
+class bonde {}

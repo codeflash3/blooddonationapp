@@ -16,7 +16,6 @@ class _DinfoEntryState extends State<DinfoEntry> {
   late String bloodgrp;
   late String urgency;
   late String contact;
-  final _auth = FirebaseAuth.instance;
   final _firestore = FirebaseFirestore.instance;
   late User loggedInUser;
 

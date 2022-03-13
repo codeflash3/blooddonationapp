@@ -71,7 +71,7 @@ class RrequestStream extends StatelessWidget {
                 child: Container(
                   padding: const EdgeInsets.all(6.0),
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(2.0),
+                    borderRadius: BorderRadius.circular(10.0),
                     border: Border.all(color: Colors.redAccent, width: 2),
                   ),
                   child: Column(

@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:blood_donation/screens/dashboard.dart';
 
-class deletedonor extends StatefulWidget {
-  const deletedonor({Key? key}) : super(key: key);
+class Deletedonor extends StatefulWidget {
+  const Deletedonor({Key? key}) : super(key: key);
   static String id = 'deleteDentry';
 
   @override
-  _deletedonorState createState() => _deletedonorState();
+  _DeletedonorState createState() => _DeletedonorState();
 }
 
-class _deletedonorState extends State<deletedonor> {
+class _DeletedonorState extends State<Deletedonor> {
   late String docId;
   @override
   Widget build(BuildContext context) {

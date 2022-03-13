@@ -19,7 +19,7 @@ class _DeleteEntruState extends State<DeleteEntru> {
       appBar: AppBar(
         backgroundColor: Colors.redAccent,
         title: const Text(
-          'Delete Entry',
+          'Delete Receiver Requests',
           style: TextStyle(
             fontSize: 17.0,
             fontWeight: FontWeight.w300,
@@ -54,7 +54,9 @@ class _DeleteEntruState extends State<DeleteEntru> {
                 children: [
                   TextField(
                     onSubmitted: (value) {
-                      docId = value;
+                      setState(() {
+                        docId = value;
+                      });
                     },
                     decoration: const InputDecoration(
                       labelText: 'Enter your Unique ID here',
@@ -77,10 +79,11 @@ class _DeleteEntruState extends State<DeleteEntru> {
                     ),
                     onPressed: () async {
                       showAlertDialog(context);
-                      final collection =
-                          await FirebaseFirestore.instance.collection('dinfo');
+                      final collection = await FirebaseFirestore.instance
+                          .collection('info')
+                          .doc(docId);
                       collection
-                          .doc(docId) // <-- Doc ID to be deleted.
+                          // <-- Doc ID to be deleted.
                           .delete() // <-- Delete
                           .then((_) => print('Deleted'))
                           .catchError(
