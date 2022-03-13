@@ -1,6 +1,7 @@
 import 'package:blood_donation/DBTabs/drequests.dart';
 import 'package:blood_donation/DBTabs/faqs.dart';
 import 'package:blood_donation/DBTabs/receivertab.dart';
+import 'package:blood_donation/DBTabs/searchblood.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -29,7 +30,7 @@ class _DashboardState extends State<Dashboard> {
 
   void getCurrentUser() async {
     try {
-      final user = await _auth.currentUser;
+      final user = _auth.currentUser;
       if (user != null) {
         loggedInUser = user;
       }
@@ -38,6 +39,7 @@ class _DashboardState extends State<Dashboard> {
     }
   }
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -123,7 +125,7 @@ class _DashboardState extends State<Dashboard> {
                       color: Colors.redAccent,
                       width: 2,
                     ),
-                    borderRadius: BorderRadius.circular(3.0),
+                    borderRadius: BorderRadius.circular(7),
                   ),
                   height: 69.0,
                   child: const Center(
@@ -151,7 +153,7 @@ class _DashboardState extends State<Dashboard> {
                       color: Colors.redAccent,
                       width: 2,
                     ),
-                    borderRadius: BorderRadius.circular(3.0),
+                    borderRadius: BorderRadius.circular(7.0),
                   ),
                   height: 69.0,
                   child: const Center(
@@ -179,7 +181,7 @@ class _DashboardState extends State<Dashboard> {
                       color: Colors.redAccent,
                       width: 2,
                     ),
-                    borderRadius: BorderRadius.circular(3.0),
+                    borderRadius: BorderRadius.circular(7.0),
                   ),
                   height: 69.0,
                   child: const Center(
@@ -207,7 +209,7 @@ class _DashboardState extends State<Dashboard> {
                       color: Colors.redAccent,
                       width: 2,
                     ),
-                    borderRadius: BorderRadius.circular(3.0),
+                    borderRadius: BorderRadius.circular(7.0),
                   ),
                   height: 69.0,
                   child: const Center(
@@ -235,7 +237,7 @@ class _DashboardState extends State<Dashboard> {
                       color: Colors.redAccent,
                       width: 2,
                     ),
-                    borderRadius: BorderRadius.circular(3.0),
+                    borderRadius: BorderRadius.circular(7.0),
                   ),
                   height: 69.0,
                   child: const Center(
@@ -255,7 +257,7 @@ class _DashboardState extends State<Dashboard> {
               padding: const EdgeInsets.all(8.0),
               child: TextButton(
                 onPressed: () {
-                  Navigator.pushNamed(context, deletedonor.id);
+                  Navigator.pushNamed(context, Deletedonor.id);
                 },
                 child: Container(
                   decoration: BoxDecoration(
@@ -263,7 +265,7 @@ class _DashboardState extends State<Dashboard> {
                       color: Colors.redAccent,
                       width: 2,
                     ),
-                    borderRadius: BorderRadius.circular(3.0),
+                    borderRadius: BorderRadius.circular(7.0),
                   ),
                   height: 69.0,
                   child: const Center(
@@ -291,12 +293,40 @@ class _DashboardState extends State<Dashboard> {
                       color: Colors.redAccent,
                       width: 2,
                     ),
-                    borderRadius: BorderRadius.circular(3.0),
+                    borderRadius: BorderRadius.circular(7.0),
                   ),
                   height: 69.0,
                   child: const Center(
                     child: Text(
-                      'Search for donors',
+                      'Search for donors(City)',
+                      style: TextStyle(
+                        fontSize: 20.0,
+                        fontWeight: FontWeight.w300,
+                        color: Colors.black,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: TextButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, Searchblood.id);
+                },
+                child: Container(
+                  decoration: BoxDecoration(
+                    border: Border.all(
+                      color: Colors.redAccent,
+                      width: 2,
+                    ),
+                    borderRadius: BorderRadius.circular(7.0),
+                  ),
+                  height: 69.0,
+                  child: const Center(
+                    child: Text(
+                      'Search for donors(Blood)',
                       style: TextStyle(
                         fontSize: 20.0,
                         fontWeight: FontWeight.w300,
